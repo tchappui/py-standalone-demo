@@ -1,19 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8
 
-""" This is a test pygame application."""
+"""This is a test pygame application."""
 
-RECTANGLE = 'images/sprite.png'
+
+import sys
+import pip
 
 import pygame as pg
 
-class Application:
-    """ Application represents our Pygame application.
-    
-    Application initialize the application and gives a method to start it."""
+
+RECTANGLE = 'images/sprite.png'
+
+
+class Demo:
+    """Demo represents our demo application.
+
+    The Demo class initializes the application and gives a method to start it.
+    """
 
     def __init__(self):
-        """ Constructor."""
+        """Constructor."""
 
         pg.init()
 
@@ -39,24 +46,22 @@ class Application:
         pg.display.flip()
 
     def run(self):
-        """ Starts the application."""
+        """Starts the application."""
         clock = pg.time.Clock()
-        while 1:
+        stopped = False
+        while not stopped:
             # Limit runtime speed to 30 frames/second
             clock.tick(30)
-
             pg.event.pump()
-
             # A key has been pressed
             keyinput = pg.key.get_pressed()
-
             # Exit on window corner x click
             for event in pg.event.get():
                 if event.type == pg.QUIT:
                     pg.quit()
                     raise SystemExit
 
-            # Check arrow keys and move sprite in direction of arrow by 2 pixels
+            # Check arrow keys and move sprite in direction of arrow by 2 px
             if keyinput[pg.K_LEFT]:
                 self.sprite_rect.centerx -= 2
             elif keyinput[pg.K_RIGHT]:
@@ -71,10 +76,11 @@ class Application:
             # update display
             pg.display.flip()
 
+
 def main():
-    app = Application()
+    """Main entry point of the application."""
+    app = Demo()
     app.run()
 
 if __name__ == "__main__":
     main()
-
