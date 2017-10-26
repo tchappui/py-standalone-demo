@@ -5,8 +5,7 @@ The goal of this project is to demonstrate a simple deployment using the venv mo
 To install and execute this short demo, you need to follow these steps:
 
 1. `git clone https://github.com/tchappui/py-deploy-demo.git && cd py-deploy-demo`
-2. `bash bootstrap python3` on macos/linux and `bootstrap py` on windows
+2. `python3 app.py` on macos/linux and `py -3 app.py` on windows
 
-To execute demo program from the project folder:
-
-- `venv\bin\python demo.py` on windows and `venv/bin/python demo.py on linux and macos`
+If the dependencies are not installed, a virtual environment is automatically created with 
+the needed requirements installed inside.
