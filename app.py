@@ -3,7 +3,7 @@
 
 """Script launcher.
 
-This launcher generate its own virtual environment dans install the needed
+This launcher generate its own virtual environment and installs the needed
 dependencies.
 """
 
