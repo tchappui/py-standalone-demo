@@ -4,9 +4,6 @@
 """This is a test pygame application."""
 
 
-import sys
-import pip
-
 import pygame as pg
 
 
