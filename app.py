@@ -13,7 +13,7 @@ import sys
 import venv
 
 
-BASE_DIR = pathlib.Path('.').resolve()
+BASE_DIR = pathlib.Path(__file__).parent
 VENV = BASE_DIR / 'venv'
 SCRIPTS = VENV / 'Scripts' if sys.platform == 'win32' else venv / 'bin'
 PIP = str(SCRIPTS / 'pip')
